@@ -1,4 +1,4 @@
-// BNZ Customize - Static Website JavaScript
+// BNZ Car Customize - Static Website JavaScript
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initHeaderScroll();
     
-    console.log('BNZ Customize website loaded successfully!');
+    console.log('BNZ Car Customize website loaded successfully!');
 });
 
 // Mobile Menu Functionality
