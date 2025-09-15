@@ -22,71 +22,104 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        accent: {
+                            400: '#facc15',
+                            500: '#eab308'
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-inter bg-gray-50 text-gray-900 leading-relaxed">
     <!-- Header -->
-    <header id="header" class="header">
+    <header id="header" class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
         <!-- Top Contact Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <span>+971 55 257 9847</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <span>beescorporationae@gmail.com</span>
+        <div class="hidden lg:block bg-gray-100 py-2">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-end">
+                    <div class="flex items-center space-x-6 text-sm text-gray-600">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-primary-500">📞</span>
+                            <span>+971 55 257 9847</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-primary-500">✉️</span>
+                            <span>beescorporationae@gmail.com</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Main Navigation -->
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-content">
+        <nav class="py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
                     <!-- Logo -->
-                    <a href="index.html" class="logo">
-                        BNZ <span class="logo-accent">Customize</span>
+                    <a href="index.html" class="text-3xl font-bold text-gray-900">
+                        BNZ <span class="text-primary-500">Customize</span>
                     </a>
                     
                     <!-- Desktop Navigation -->
-                    <div class="nav-menu" id="nav-menu">
-                        <a href="index.html" class="nav-link">Home</a>
+                    <div class="hidden lg:flex items-center space-x-8" id="nav-menu">
+                        <a href="index.html" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Home</a>
                         
                         <!-- Services Dropdown -->
-                        <div class="dropdown">
-                            <a href="index.html#services" class="nav-link dropdown-trigger">
-                                Services <span class="dropdown-arrow">▼</span>
+                        <div class="relative group">
+                            <a href="index.html#services" class="flex items-center space-x-1 text-gray-700 hover:text-primary-500 font-medium transition-colors">
+                                <span>Services</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </a>
-                            <div class="dropdown-menu">
-                                <a href="index.html#car-wrapping" class="dropdown-link">Car Wrapping</a>
-                                <a href="index.html#ppf" class="dropdown-link">Paint Protection Film</a>
-                                <a href="index.html#ceramic-coating" class="dropdown-link">Ceramic Coating</a>
-                                <a href="index.html#window-tinting" class="dropdown-link">Window Tinting</a>
-                                <a href="index.html#peelable-paint" class="dropdown-link">Peelable Paint</a>
+                            <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="index.html#car-wrapping" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Car Wrapping</a>
+                                    <a href="index.html#ppf" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Paint Protection Film</a>
+                                    <a href="index.html#ceramic-coating" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Ceramic Coating</a>
+                                    <a href="index.html#window-tinting" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Window Tinting</a>
+                                    <a href="index.html#peelable-paint" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Peelable Paint</a>
+                                </div>
                             </div>
                         </div>
                         
-                        <a href="about.html" class="nav-link">About</a>
-                        <a href="index.html#reviews" class="nav-link">Reviews</a>
-                        <a href="index.html#contact" class="nav-link">Contact</a>
+                        <a href="about.html" class="text-primary-500 font-medium">About</a>
+                        <a href="index.html#reviews" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Reviews</a>
+                        <a href="index.html#contact" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Contact</a>
                     </div>
                     
                     <!-- CTA Buttons -->
-                    <div class="nav-cta">
-                        <a href="index.html#quote" class="btn btn-outline">Get a Quote</a>
-                        <a href="index.html#booking" class="btn btn-primary">Book Now</a>
+                    <div class="hidden lg:flex items-center space-x-4">
+                        <a href="index.html#quote" class="px-4 py-2 text-primary-500 border border-primary-500 rounded-lg hover:bg-primary-50 transition-colors font-medium">Get a Quote</a>
+                        <a href="index.html#booking" class="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium">Book Now</a>
                     </div>
                     
                     <!-- Mobile Menu Toggle -->
-                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <button class="lg:hidden flex flex-col space-y-1 p-2" id="mobile-menu-toggle">
+                        <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+                        <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+                        <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
                     </button>
                 </div>
             </div>
@@ -94,44 +127,44 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="about-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1d4ed8 100%); color: white; padding: 8rem 0 6rem; text-align: center;">
-        <div class="container">
-            <h1 style="font-size: 3rem; margin-bottom: 1rem; font-weight: 700;">About BNZ Car Customize</h1>
-            <p style="font-size: 1.25rem; color: #dbeafe; max-width: 48rem; margin: 0 auto 3rem; line-height: 1.7;">
+    <section class="bg-gradient-to-br from-primary-900 via-primary-500 to-primary-600 text-white py-32 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About BNZ Car Customize</h1>
+            <p class="text-xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed">
                 With over 10 years of experience and 500+ satisfied customers, we're the UAE's trusted experts in vehicle customization and protection.
             </p>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 32rem; margin: 0 auto;">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 <div>
-                    <div style="font-size: 2rem; font-weight: 700; color: #facc15; margin-bottom: 0.5rem;">10+</div>
-                    <div style="color: #dbeafe;">Years Experience</div>
+                    <div class="text-3xl font-bold text-accent-400 mb-2">10+</div>
+                    <div class="text-blue-100">Years Experience</div>
                 </div>
                 <div>
-                    <div style="font-size: 2rem; font-weight: 700; color: #facc15; margin-bottom: 0.5rem;">500+</div>
-                    <div style="color: #dbeafe;">Cars Completed</div>
+                    <div class="text-3xl font-bold text-accent-400 mb-2">500+</div>
+                    <div class="text-blue-100">Cars Completed</div>
                 </div>
                 <div>
-                    <div style="font-size: 2rem; font-weight: 700; color: #facc15; margin-bottom: 0.5rem;">5★</div>
-                    <div style="color: #dbeafe;">Average Rating</div>
+                    <div class="text-3xl font-bold text-accent-400 mb-2">5★</div>
+                    <div class="text-blue-100">Average Rating</div>
                 </div>
                 <div>
-                    <div style="font-size: 2rem; font-weight: 700; color: #facc15; margin-bottom: 0.5rem;">24/7</div>
-                    <div style="color: #dbeafe;">Support</div>
+                    <div class="text-3xl font-bold text-accent-400 mb-2">24/7</div>
+                    <div class="text-blue-100">Support</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Timeline Section -->
-    <section style="padding: 5rem 0; background-color: #f9fafb;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 3rem;">
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-12">
                 Our Journey
             </h2>
             
-            <div style="position: relative; max-width: 48rem; margin: 0 auto;">
+            <div class="relative max-w-4xl mx-auto">
                 <!-- Timeline line -->
-                <div style="position: absolute; left: 50%; transform: translateX(-50%); height: 100%; width: 2px; background: linear-gradient(to bottom, #2563eb, #dbeafe, #2563eb);"></div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary-500 via-blue-200 to-primary-500"></div>
                 
                 <div style="display: flex; flex-direction: column; gap: 3rem;">
                     <!-- 2014 -->
@@ -353,70 +386,70 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <!-- Company Info -->
-                <div class="footer-section">
-                    <h3 class="footer-logo">BNZ <span class="logo-accent">Customize</span></h3>
-                    <p class="footer-description">Premium vehicle protection and customization specialists in Dubai, UAE. Expert installation of PPF, ceramic coating, and car wrapping services.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link instagram">📷</a>
-                        <a href="#" class="social-link youtube">📺</a>
-                        <a href="#" class="social-link whatsapp">💬</a>
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4">BNZ <span class="text-primary-500">Customize</span></h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">Premium vehicle protection and customization specialists in Dubai, UAE. Expert installation of PPF, ceramic coating, and car wrapping services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">📷</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">📺</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">💬</a>
                     </div>
                 </div>
                 
                 <!-- Office -->
-                <div class="footer-section">
-                    <h4>Office</h4>
-                    <div class="footer-contact">
-                        <div class="footer-contact-item">
-                            <span class="icon">📍</span>
-                            <div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Office</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-primary-500 mt-1">📍</span>
+                            <div class="text-gray-300">
                                 <p>Warehouse 31 - Al Quoz Industrial Area 3</p>
                                 <p>Dubai – United Arab Emirates</p>
                             </div>
                         </div>
-                        <div class="footer-contact-item">
-                            <span class="icon">✉️</span>
-                            <a href="mailto:beescorporationae@gmail.com">beescorporationae@gmail.com</a>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-500">✉️</span>
+                            <a href="mailto:beescorporationae@gmail.com" class="text-gray-300 hover:text-primary-500 transition-colors">beescorporationae@gmail.com</a>
                         </div>
-                        <div class="footer-contact-item">
-                            <span class="icon">📞</span>
-                            <a href="tel:+971552579847">+971 55 257 9847</a>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-500">📞</span>
+                            <a href="tel:+971552579847" class="text-gray-300 hover:text-primary-500 transition-colors">+971 55 257 9847</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Services 1 -->
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html#car-wrapping">Car Wrapping</a></li>
-                        <li><a href="index.html#ppf">Paint Protection Film</a></li>
-                        <li><a href="index.html#ceramic-coating">Ceramic Coating</a></li>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#car-wrapping" class="text-gray-300 hover:text-primary-500 transition-colors">Car Wrapping</a></li>
+                        <li><a href="index.html#ppf" class="text-gray-300 hover:text-primary-500 transition-colors">Paint Protection Film</a></li>
+                        <li><a href="index.html#ceramic-coating" class="text-gray-300 hover:text-primary-500 transition-colors">Ceramic Coating</a></li>
                     </ul>
                 </div>
                 
                 <!-- Services 2 -->
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html#window-tinting">Window Tinting</a></li>
-                        <li><a href="index.html#peelable-paint">Peelable Paint</a></li>
-                        <li><a href="index.html#detailing">Full Detailing Service</a></li>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">More Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#window-tinting" class="text-gray-300 hover:text-primary-500 transition-colors">Window Tinting</a></li>
+                        <li><a href="index.html#peelable-paint" class="text-gray-300 hover:text-primary-500 transition-colors">Peelable Paint</a></li>
+                        <li><a href="index.html#detailing" class="text-gray-300 hover:text-primary-500 transition-colors">Full Detailing Service</a></li>
                     </ul>
                 </div>
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2024 BNZ Car Customize. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" class="footer-social-link">📷</a>
-                    <a href="#" class="footer-social-link">📺</a>
-                    <a href="#" class="footer-social-link">💬</a>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2024 BNZ Car Customize. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-primary-500 transition-colors">📷</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-primary-500 transition-colors">📺</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-primary-500 transition-colors">💬</a>
                 </div>
             </div>
         </div>

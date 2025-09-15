@@ -22,474 +22,888 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        accent: {
+                            400: '#facc15',
+                            500: '#eab308'
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-inter bg-gray-50 text-gray-900 leading-relaxed">
     <!-- Header -->
-    <header id="header" class="header">
+    <header id="header" class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
         <!-- Top Contact Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <span>+971 55 257 9847</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <span>beescorporationae@gmail.com</span>
+        <div class="hidden lg:block bg-gray-100 py-2">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-end">
+                    <div class="flex items-center space-x-6 text-sm text-gray-600">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-primary-500">📞</span>
+                            <span>+971 55 257 9847</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-primary-500">✉️</span>
+                            <span>beescorporationae@gmail.com</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Main Navigation -->
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-content">
+        <nav class="py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
                     <!-- Logo -->
-                    <a href="#" class="logo">
-                        BNZ <span class="logo-accent">Customize</span>
+                    <a href="#" class="text-3xl font-bold text-gray-900">
+                        BNZ <span class="text-primary-500">Customize</span>
                     </a>
                     
                     <!-- Desktop Navigation -->
-                    <div class="nav-menu" id="nav-menu">
-                        <a href="#home" class="nav-link">Home</a>
+                    <div class="hidden lg:flex items-center space-x-8" id="nav-menu">
+                        <a href="#home" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Home</a>
                         
                         <!-- Services Dropdown -->
-                        <div class="dropdown">
-                            <a href="#services" class="nav-link dropdown-trigger">
-                                Services <span class="dropdown-arrow">▼</span>
+                        <div class="relative group">
+                            <a href="#services" class="flex items-center space-x-1 text-gray-700 hover:text-primary-500 font-medium transition-colors">
+                                <span>Services</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </a>
-                            <div class="dropdown-menu">
-                                <a href="#car-wrapping" class="dropdown-link">Car Wrapping</a>
-                                <a href="#ppf" class="dropdown-link">Paint Protection Film</a>
-                                <a href="#ceramic-coating" class="dropdown-link">Ceramic Coating</a>
-                                <a href="#window-tinting" class="dropdown-link">Window Tinting</a>
-                                <a href="#peelable-paint" class="dropdown-link">Peelable Paint</a>
+                            <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="#car-wrapping" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Car Wrapping</a>
+                                    <a href="#ppf" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Paint Protection Film</a>
+                                    <a href="#ceramic-coating" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Ceramic Coating</a>
+                                    <a href="#window-tinting" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Window Tinting</a>
+                                    <a href="#peelable-paint" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Peelable Paint</a>
+                                </div>
                             </div>
                         </div>
                         
-                        <a href="about.html" class="nav-link">About</a>
-                        <a href="#reviews" class="nav-link">Reviews</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="about.html" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">About</a>
+                        <a href="#reviews" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Reviews</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Contact</a>
                     </div>
                     
                     <!-- CTA Buttons -->
-                    <div class="nav-cta">
-                        <a href="#quote" class="btn btn-outline">Get a Quote</a>
-                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    <div class="hidden lg:flex items-center space-x-4">
+                        <a href="#quote" class="px-4 py-2 text-primary-500 border border-primary-500 rounded-lg hover:bg-primary-50 transition-colors font-medium">Get a Quote</a>
+                        <a href="#booking" class="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium">Book Now</a>
                     </div>
                     
                     <!-- Mobile Menu Toggle -->
-                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <button class="lg:hidden flex flex-col space-y-1 p-2" id="mobile-menu-toggle">
+                        <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+                        <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+                        <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
                     </button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="hero-overlay"></div>
-            <div class="hero-car">🚗</div>
+    <!-- Modern Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <!-- Gradient Mesh Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+            
+            <!-- Animated Gradient Orbs -->
+            <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-white/[0.02] bg-grid-16"></div>
+            
+            <!-- Glassmorphism Overlay -->
+            <div class="absolute inset-0 backdrop-blur-3xl bg-gradient-to-br from-white/5 to-transparent"></div>
         </div>
         
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">BNZ Car Customize</h1>
-                <div class="hero-subtitle">Vehicle Protection Specialists</div>
-                <p class="hero-description">
-                    Premium car wrapping, paint protection film, ceramic coating, and window tinting services across Dubai, Abu Dhabi, and UAE
-                </p>
-                
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary btn-lg">Free Consultation</a>
-                    <a href="#services" class="btn btn-outline btn-lg">View Services</a>
+        <!-- Main Content -->
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white max-w-5xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-8 animate-fade-in-up">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    Dubai's #1 Vehicle Protection Specialists
                 </div>
                 
-                <div class="trust-indicators">
-                    <div class="trust-item">
-                        <span class="trust-dot"></span>
-                        <span>3M Certified Installers</span>
+                <!-- Main Heading with Gradient Text -->
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight animate-fade-in-up animation-delay-200">
+                    <span class="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                        Transform Your
+                    </span>
+                    <br>
+                    <span class="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent animate-gradient-x">
+                        Vehicle
+                    </span>
+                </h1>
+                
+                <!-- Subheading -->
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in-up animation-delay-400">
+                    Premium PPF, ceramic coating & car wrapping with 
+                    <span class="text-yellow-400 font-semibold">10-year warranty</span> 
+                    and <span class="text-green-400 font-semibold">same-day service</span>
+                </p>
+                
+                <!-- Modern CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-600">
+                    <a href="#contact" class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+                        <span class="relative z-10 flex items-center justify-center">
+                            Get Free Quote
+                            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    
+                    <a href="#services" class="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white/20 hover:scale-105">
+                        <span class="flex items-center justify-center">
+                            View Portfolio
+                            <svg class="w-5 h-5 ml-2 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Social Proof Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-800">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-yellow-400 mb-1">500+</div>
+                        <div class="text-sm text-gray-400">Cars Protected</div>
                     </div>
-                    <div class="trust-item">
-                        <span class="trust-dot"></span>
-                        <span>XPEL Authorized</span>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-400 mb-1">10+</div>
+                        <div class="text-sm text-gray-400">Years Experience</div>
                     </div>
-                    <div class="trust-item">
-                        <span class="trust-dot"></span>
-                        <span>Lifetime Warranty</span>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-1">5★</div>
+                        <div class="text-sm text-gray-400">Average Rating</div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Scroll Down Indicator -->
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <span class="scroll-arrow">↓</span>
+        <!-- Floating Elements -->
+        <div class="absolute top-20 right-20 w-4 h-4 bg-yellow-400 rounded-full animate-ping hidden lg:block"></div>
+        <div class="absolute bottom-40 left-10 w-6 h-6 bg-purple-400 rounded-full animate-pulse hidden lg:block"></div>
+        <div class="absolute top-1/3 right-10 w-3 h-3 bg-green-400 rounded-full animate-bounce hidden lg:block"></div>
+        
+        <!-- Modern Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+            </div>
         </div>
         
-        <!-- Side Contact -->
-        <div class="side-contact">
-            <div class="side-contact-text">
-                <span>Call us:</span>
-                <span>+971 55 257 9847</span>
+        <!-- Floating Contact -->
+        <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-30 hidden xl:block">
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white">
+                <div class="text-sm text-gray-300 mb-1">Need Help?</div>
+                <a href="tel:+971552579847" class="text-lg font-semibold hover:text-yellow-400 transition-colors">
+                    +971 55 257 9847
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Professional vehicle protection and customization services using premium materials and certified installation techniques</p>
+    <!-- Modern Services Section -->
+    <section id="services" class="py-32 relative overflow-hidden">
+        <!-- Background with Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-yellow-100 to-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float animation-delay-2000"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    Premium Services
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+                    <span class="bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+                        Transform & Protect
+                    </span>
+                    <br>
+                    <span class="text-gray-700">Your Investment</span>
+                </h2>
+                
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Cutting-edge vehicle protection using NASA-grade materials and precision German engineering. 
+                    <span class="text-blue-600 font-semibold">10-year warranty included.</span>
+                </p>
             </div>
             
-            <div class="services-grid">
-                <!-- Car Wrapping -->
-                <div class="service-card popular">
-                    <div class="popular-badge">MOST POPULAR</div>
-                    <div class="service-header">
-                        <div class="service-icon">🎨</div>
-                        <div class="service-emoji">🎨</div>
+            <!-- Modern Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <!-- Car Wrapping - Featured -->
+                <div class="group relative">
+                    <!-- Popular Badge -->
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg">
+                            ⭐ MOST POPULAR
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <h3>Car Wrapping</h3>
-                        <p class="service-subtitle">3M & AVERY DENNISON CERTIFIED</p>
-                        <p class="service-description">Transform your vehicle with premium vinyl wraps in thousands of colors and finishes. Professional installation with precision cutting.</p>
-                        <ul class="service-features">
-                            <li>Custom designs</li>
-                            <li>Color change wraps</li>
-                            <li>3M certified materials</li>
-                            <li>Precision installation</li>
-                        </ul>
-                        <a href="#car-wrapping" class="service-btn">Read More →</a>
+                    
+                    <div class="relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 overflow-hidden">
+                        <!-- Gradient Background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <!-- Content -->
+                        <div class="relative z-10">
+                            <!-- Icon -->
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl transform group-hover:rotate-12 transition-transform duration-500">
+                                    🎨
+                                </div>
+                            </div>
+                            
+                            <!-- Title & Subtitle -->
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Car Wrapping</h3>
+                            <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                                3M & AVERY CERTIFIED
+                            </div>
+                            
+                            <!-- Description -->
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Transform your vehicle with premium vinyl wraps. Precision installation with 
+                                <span class="font-semibold text-gray-900">10-year warranty</span>.
+                            </p>
+                            
+                            <!-- Features -->
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Custom designs & colors</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Same-day installation</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Precision cutting technology</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CTA Button -->
+                            <a href="#car-wrapping" class="group/btn relative block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                                <span class="relative z-10">Get Quote • From AED 2,500</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                        </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                     </div>
                 </div>
                 
                 <!-- PPF -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🛡️</div>
-                        <div class="service-emoji">🛡️</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Paint Protection Film</h3>
-                        <p class="service-subtitle">XPEL CERTIFIED INSTALLERS</p>
-                        <p class="service-description">Ultimate protection against scratches, chips, and environmental damage with self-healing technology and 10-year warranty.</p>
-                        <ul class="service-features">
-                            <li>Self-healing technology</li>
-                            <li>UV protection</li>
-                            <li>10-year warranty</li>
-                            <li>Invisible protection</li>
-                        </ul>
-                        <a href="#ppf" class="service-btn">Read More →</a>
+                <div class="group relative">
+                    <div class="relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 overflow-hidden">
+                        <!-- Gradient Background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <!-- Content -->
+                        <div class="relative z-10">
+                            <!-- Icon -->
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-3xl transform group-hover:rotate-12 transition-transform duration-500">
+                                    🛡️
+                                </div>
+                            </div>
+                            
+                            <!-- Title & Subtitle -->
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Paint Protection Film</h3>
+                            <div class="text-sm font-semibold text-green-600 uppercase tracking-wide mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                                XPEL CERTIFIED
+                            </div>
+                            
+                            <!-- Description -->
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Ultimate protection with self-healing technology. NASA-grade materials with 
+                                <span class="font-semibold text-gray-900">10-year warranty</span>.
+                            </p>
+                            
+                            <!-- Features -->
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Self-healing technology</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>99% UV protection</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Invisible protection</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CTA Button -->
+                            <a href="#ppf" class="group/btn relative block w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white text-center py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                                <span class="relative z-10">Get Quote • From AED 3,500</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                        </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                     </div>
                 </div>
                 
                 <!-- Ceramic Coating -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">💎</div>
-                        <div class="service-emoji">💎</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Ceramic Coating</h3>
-                        <p class="service-subtitle">DIAMOND-HARD PROTECTION</p>
-                        <p class="service-description">Advanced nano-ceramic protection for long-lasting shine, hydrophobic properties, and enhanced durability.</p>
-                        <ul class="service-features">
-                            <li>Hydrophobic coating</li>
-                            <li>Scratch resistance</li>
-                            <li>Enhanced gloss</li>
-                            <li>5-year warranty</li>
-                        </ul>
-                        <a href="#ceramic-coating" class="service-btn">Read More →</a>
+                <div class="group relative">
+                    <div class="relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 overflow-hidden">
+                        <!-- Gradient Background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-50/50 to-yellow-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <!-- Content -->
+                        <div class="relative z-10">
+                            <!-- Icon -->
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-2xl flex items-center justify-center text-3xl transform group-hover:rotate-12 transition-transform duration-500">
+                                    💎
+                                </div>
+                            </div>
+                            
+                            <!-- Title & Subtitle -->
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Ceramic Coating</h3>
+                            <div class="text-sm font-semibold text-amber-600 uppercase tracking-wide mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-amber-500 rounded-full mr-2 animate-pulse"></span>
+                                DIAMOND-HARD PROTECTION
+                            </div>
+                            
+                            <!-- Description -->
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Advanced nano-ceramic protection for enhanced durability and shine with 
+                                <span class="font-semibold text-gray-900">5-year warranty</span>.
+                            </p>
+                            
+                            <!-- Features -->
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Hydrophobic coating</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Enhanced gloss finish</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Scratch resistance</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CTA Button -->
+                            <a href="#ceramic-coating" class="group/btn relative block w-full bg-gradient-to-r from-amber-600 to-yellow-600 text-white text-center py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                                <span class="relative z-10">Get Quote • From AED 1,800</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                        </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                     </div>
                 </div>
                 
                 <!-- Window Tinting -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🪟</div>
-                        <div class="service-emoji">🪟</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Window Tinting</h3>
-                        <p class="service-subtitle">XPEL PRIME XR+ FILMS</p>
-                        <p class="service-description">Premium window films for privacy, heat reduction, and UV protection. Professional installation guaranteed.</p>
-                        <ul class="service-features">
-                            <li>99% UV blocking</li>
-                            <li>Heat rejection</li>
-                            <li>Privacy enhancement</li>
-                            <li>Legal compliance</li>
-                        </ul>
-                        <a href="#window-tinting" class="service-btn">Read More →</a>
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-4xl">🪟</div>
+                            <div class="text-4xl">🪟</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900">Window Tinting</h3>
+                            <p class="text-sm font-semibold text-primary-500 uppercase tracking-wide">XPEL PRIME XR+ FILMS</p>
+                            <p class="text-gray-600 leading-relaxed">Premium window films for privacy, heat reduction, and UV protection. Professional installation guaranteed.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>99% UV blocking</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Heat rejection</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Privacy enhancement</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Legal compliance</span>
+                                </li>
+                            </ul>
+                            <a href="#window-tinting" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-primary-500 transition-colors font-semibold">
+                                Read More →
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Peelable Paint -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🎭</div>
-                        <div class="service-emoji">🎭</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Peelable Paint</h3>
-                        <p class="service-subtitle">TEMPORARY STYLING SOLUTION</p>
-                        <p class="service-description">Temporary color change solution that peels off without damaging original paint. Perfect for short-term styling.</p>
-                        <ul class="service-features">
-                            <li>Easy removal</li>
-                            <li>No paint damage</li>
-                            <li>Multiple colors</li>
-                            <li>Temporary solution</li>
-                        </ul>
-                        <a href="#peelable-paint" class="service-btn">Read More →</a>
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-4xl">🎭</div>
+                            <div class="text-4xl">🎭</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900">Peelable Paint</h3>
+                            <p class="text-sm font-semibold text-primary-500 uppercase tracking-wide">TEMPORARY STYLING SOLUTION</p>
+                            <p class="text-gray-600 leading-relaxed">Temporary color change solution that peels off without damaging original paint. Perfect for short-term styling.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Easy removal</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>No paint damage</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Multiple colors</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Temporary solution</span>
+                                </li>
+                            </ul>
+                            <a href="#peelable-paint" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-primary-500 transition-colors font-semibold">
+                                Read More →
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Full Detailing -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">✨</div>
-                        <div class="service-emoji">✨</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Full Detailing Service</h3>
-                        <p class="service-subtitle">COMPREHENSIVE CARE</p>
-                        <p class="service-description">Complete vehicle detailing service including paint correction, interior cleaning, and protection application.</p>
-                        <ul class="service-features">
-                            <li>Paint correction</li>
-                            <li>Interior detailing</li>
-                            <li>Engine bay cleaning</li>
-                            <li>Professional finish</li>
-                        </ul>
-                        <a href="#detailing" class="service-btn">Read More →</a>
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-4xl">✨</div>
+                            <div class="text-4xl">✨</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900">Full Detailing Service</h3>
+                            <p class="text-sm font-semibold text-primary-500 uppercase tracking-wide">COMPREHENSIVE CARE</p>
+                            <p class="text-gray-600 leading-relaxed">Complete vehicle detailing service including paint correction, interior cleaning, and protection application.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Paint correction</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Interior detailing</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Engine bay cleaning</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                                    <span>Professional finish</span>
+                                </li>
+                            </ul>
+                            <a href="#detailing" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-primary-500 transition-colors font-semibold">
+                                Read More →
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- Services CTA -->
-            <div class="services-cta">
-                <h3>Need a Custom Solution?</h3>
-                <p>Every vehicle is unique. Let our experts create a customized protection and styling package tailored to your specific needs and budget.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Custom Quote</a>
-                    <a href="tel:+971552579847" class="btn btn-outline">Call Now: +971 55 257 9847</a>
+            <div class="bg-gray-900 text-white rounded-2xl p-8 lg:p-12 text-center">
+                <h3 class="text-2xl lg:text-3xl font-bold mb-4">Need a Custom Solution?</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">Every vehicle is unique. Let our experts create a customized protection and styling package tailored to your specific needs and budget.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="px-8 py-4 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-semibold">Get Custom Quote</a>
+                    <a href="tel:+971552579847" class="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-gray-900 transition-colors font-semibold">Call Now: +971 55 257 9847</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="section-label">About Us</div>
-                    <h2>Dubai's Experts<br><span class="text-accent">in PPF, Car Wrapping<br>& Ceramic Coating</span></h2>
-                    <div class="company-name">BNZ Car Customize</div>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="space-y-6">
+                    <div class="text-sm font-semibold text-primary-500 uppercase tracking-wide">About Us</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                        Dubai's Experts<br><span class="text-primary-500">in PPF, Car Wrapping<br>& Ceramic Coating</span>
+                    </h2>
+                    <div class="text-2xl font-bold text-gray-900">BNZ Car Customize</div>
                     
-                    <div class="about-description">
+                    <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
                         <p>Welcome to BNZ Car Customize, your one-stop workshop for premium car care in Dubai. We specialize in professional vehicle protection and customization services, including the application of top-tier Paint Protection Film (PPF), Car Wrapping, Ceramic Coatings, and Window Tinting to keep your vehicle looking its best.</p>
                         
                         <p>We don't just work on cars; we love them. Our passion for automotive beauty and protection is evident in every detail. We go the extra mile to ensure your car receives the care and attention it deserves, treating it as if it were our own.</p>
                     </div>
                     
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="icon">📞</span>
-                            <span>+971 55 257 9847</span>
+                    <div class="space-y-3 pt-6">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-500 text-xl">📞</span>
+                            <span class="text-gray-700 font-medium">+971 55 257 9847</span>
                         </div>
-                        <div class="contact-item">
-                            <span class="icon">📍</span>
-                            <span>Warehouse 31 - Al Quoz Industrial Area 3 - Dubai</span>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-500 text-xl">📍</span>
+                            <span class="text-gray-700 font-medium">Warehouse 31 - Al Quoz Industrial Area 3 - Dubai</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <div class="building-emoji">🏢</div>
-                        <p>BNZ Car Customize Workshop</p>
+                <div class="relative">
+                    <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex flex-col items-center justify-center shadow-2xl">
+                        <div class="text-8xl mb-4">🏢</div>
+                        <p class="text-gray-600 font-semibold">BNZ Car Customize Workshop</p>
                     </div>
-                    <div class="experience-badge">
-                        <div class="badge-number">10+</div>
-                        <div class="badge-text">Years Experience</div>
+                    <div class="absolute -bottom-6 -left-6 bg-primary-500 text-white p-6 rounded-xl shadow-xl">
+                        <div class="text-2xl font-bold">10+</div>
+                        <div class="text-sm">Years Experience</div>
                     </div>
                 </div>
             </div>
             
             <!-- Features Grid -->
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Premium Quality</h3>
-                    <p>We go the extra mile to ensure your car receives the care and attention it deserves, treating it as if it were our own.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 text-primary-500 rounded-2xl text-3xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Premium Quality</h3>
+                    <p class="text-gray-600 leading-relaxed">We go the extra mile to ensure your car receives the care and attention it deserves, treating it as if it were our own.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Certifications</h3>
-                    <p>We back our premium XPEL PPF and 3M materials with comprehensive warranties and certified installation.</p>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 text-primary-500 rounded-2xl text-3xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Certifications</h3>
+                    <p class="text-gray-600 leading-relaxed">We back our premium XPEL PPF and 3M materials with comprehensive warranties and certified installation.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">👥</div>
-                    <h3>Certified Experts</h3>
-                    <p>Our team consists of certified installers, passionate experts dedicated to perfecting the art of vehicle protection.</p>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 text-primary-500 rounded-2xl text-3xl mb-4">👥</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Certified Experts</h3>
+                    <p class="text-gray-600 leading-relaxed">Our team consists of certified installers, passionate experts dedicated to perfecting the art of vehicle protection.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⏰</div>
-                    <h3>The Personal Touch</h3>
-                    <p>Your car is unique, and so are our services. We don't believe in one-size-fits-all solutions.</p>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 text-primary-500 rounded-2xl text-3xl mb-4">⏰</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Personal Touch</h3>
+                    <p class="text-gray-600 leading-relaxed">Your car is unique, and so are our services. We don't believe in one-size-fits-all solutions.</p>
                 </div>
             </div>
             
             <!-- About CTA -->
-            <div class="about-cta">
-                <h3>Get In Touch</h3>
-                <p>Ready to protect and enhance your vehicle? Contact us for a free consultation and quote.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Free Consultation</a>
-                    <a href="#booking" class="btn btn-secondary">Book Appointment</a>
+            <div class="bg-gray-50 rounded-2xl p-8 lg:p-12 text-center">
+                <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Get In Touch</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">Ready to protect and enhance your vehicle? Contact us for a free consultation and quote.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="px-8 py-4 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-semibold">Free Consultation</a>
+                    <a href="#booking" class="px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold">Book Appointment</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Statistics Section -->
-    <section id="statistics" class="statistics">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="500">0</div>
-                    <div class="stat-suffix">+</div>
-                    <div class="stat-label">Cars Protected</div>
+    <section id="statistics" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-3 gap-8 text-center mb-16">
+                <div class="flex flex-col items-center">
+                    <div class="flex items-baseline">
+                        <div class="stat-number text-4xl lg:text-5xl font-bold text-white" data-target="500">0</div>
+                        <div class="text-4xl lg:text-5xl font-bold text-white">+</div>
+                    </div>
+                    <div class="text-lg text-gray-300 font-medium mt-2">Cars Protected</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="10">0</div>
-                    <div class="stat-suffix">+</div>
-                    <div class="stat-label">Years Experience</div>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-baseline">
+                        <div class="stat-number text-4xl lg:text-5xl font-bold text-white" data-target="10">0</div>
+                        <div class="text-4xl lg:text-5xl font-bold text-white">+</div>
+                    </div>
+                    <div class="text-lg text-gray-300 font-medium mt-2">Years Experience</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="5">0</div>
-                    <div class="stat-suffix"></div>
-                    <div class="stat-label">Certified Technicians</div>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-baseline">
+                        <div class="stat-number text-4xl lg:text-5xl font-bold text-white" data-target="5">0</div>
+                        <div class="text-4xl lg:text-5xl font-bold text-white"></div>
+                    </div>
+                    <div class="text-lg text-gray-300 font-medium mt-2">Certified Technicians</div>
                 </div>
             </div>
             
             <!-- Additional Info -->
-            <div class="stats-info">
-                <h3>Trusted by Dubai's Premium Car Owners</h3>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-emoji">🏆</div>
-                        <h4>Award Winning</h4>
-                        <p>Recognized for excellence in vehicle protection services</p>
+            <div class="text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl lg:text-3xl font-bold text-white mb-8">Trusted by Dubai's Premium Car Owners</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-gray-300">
+                        <div class="text-6xl mb-2">🏆</div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Award Winning</h4>
+                        <p class="text-sm">Recognized for excellence in vehicle protection services</p>
                     </div>
-                    <div class="info-item">
-                        <div class="info-emoji">🚗</div>
-                        <h4>Luxury Specialists</h4>
-                        <p>Expert care for Ferrari, Lamborghini, Porsche, and more</p>
+                    <div class="text-gray-300">
+                        <div class="text-6xl mb-2">🚗</div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Luxury Specialists</h4>
+                        <p class="text-sm">Expert care for Ferrari, Lamborghini, Porsche, and more</p>
                     </div>
-                    <div class="info-item">
-                        <div class="info-emoji">⚡</div>
-                        <h4>Fast Turnaround</h4>
-                        <p>Most services completed within 2-3 days</p>
+                    <div class="text-gray-300">
+                        <div class="text-6xl mb-2">⚡</div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Fast Turnaround</h4>
+                        <p class="text-sm">Most services completed within 2-3 days</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews">
-        <div class="container">
-            <div class="section-header">
-                <h2>Customer Reviews</h2>
-                <p>Read what our satisfied customers have to say about our professional vehicle protection services</p>
+    <!-- Modern Testimonials Section -->
+    <section id="reviews" class="py-32 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float animation-delay-2000"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                    Customer Love
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                    <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        500+ Happy Customers
+                    </span>
+                    <br>
+                    <span class="text-gray-300">Can't Be Wrong</span>
+                </h2>
+                
+                <p class="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                    Don't just take our word for it. Here's what our customers say about their experience with BNZ Car Customize.
+                </p>
             </div>
             
-            <div class="reviews-grid">
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-avatar">AM</div>
-                            <div class="reviewer-details">
-                                <div class="reviewer-name">
-                                    <span></span>
-                                    <span class="verified-badge">✓</span>
+            <!-- Modern Testimonial Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <!-- Testimonial 1 -->
+                <div class="group relative">
+                    <div class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 transform hover:-translate-y-2">
+                        <!-- Quote Icon -->
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Stars -->
+                        <div class="flex space-x-1 mb-6">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Review Text -->
+                        <blockquote class="text-white text-lg leading-relaxed mb-6">
+                            "Absolutely amazing work! My BMW looks brand new after the PPF installation. The team was professional and the quality is outstanding. Worth every dirham!"
+                        </blockquote>
+                        
+                        <!-- Customer Info -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                AM
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <span class="text-white font-semibold">Ahmed M.</span>
+                                    <svg class="w-4 h-4 text-blue-400 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
                                 </div>
-                                <div class="review-time">2 weeks ago</div>
+                                <div class="text-gray-400 text-sm">BMW X5 Owner • Dubai</div>
                             </div>
                         </div>
-                        <div class="google-logo">G</div>
                     </div>
-                    <div class="review-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                    </div>
-                    <p class="review-text">""</p>
                 </div>
                 
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-avatar">SJ</div>
-                            <div class="reviewer-details">
-                                <div class="reviewer-name">
-                                    <span></span>
-                                    <span class="verified-badge">✓</span>
+                <!-- Testimonial 2 -->
+                <div class="group relative">
+                    <div class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 transform hover:-translate-y-2">
+                        <!-- Quote Icon -->
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Stars -->
+                        <div class="flex space-x-1 mb-6">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Review Text -->
+                        <blockquote class="text-white text-lg leading-relaxed mb-6">
+                            "Best ceramic coating service in Dubai! My Porsche has been protected for 2 years now and still looks incredible. Highly recommend BNZ!"
+                        </blockquote>
+                        
+                        <!-- Customer Info -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                SJ
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <span class="text-white font-semibold">Sarah J.</span>
+                                    <svg class="w-4 h-4 text-green-400 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
                                 </div>
-                                <div class="review-time">1 month ago</div>
+                                <div class="text-gray-400 text-sm">Porsche 911 Owner • Abu Dhabi</div>
                             </div>
                         </div>
-                        <div class="google-logo">G</div>
                     </div>
-                    <div class="review-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                    </div>
-                    <p class="review-text">""</p>
                 </div>
                 
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-avatar">MH</div>
-                            <div class="reviewer-details">
-                                <div class="reviewer-name">
-                                    <span></span>
-                                    <span class="verified-badge">✓</span>
+                <!-- Testimonial 3 -->
+                <div class="group relative">
+                    <div class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 transform hover:-translate-y-2">
+                        <!-- Quote Icon -->
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Stars -->
+                        <div class="flex space-x-1 mb-6">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Review Text -->
+                        <blockquote class="text-white text-lg leading-relaxed mb-6">
+                            "Incredible car wrapping service! They transformed my Tesla Model S completely. The attention to detail is unmatched. 5 stars!"
+                        </blockquote>
+                        
+                        <!-- Customer Info -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                MH
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <span class="text-white font-semibold">Mohammed H.</span>
+                                    <svg class="w-4 h-4 text-amber-400 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
                                 </div>
-                                <div class="review-time">3 weeks ago</div>
+                                <div class="text-gray-400 text-sm">Tesla Model S Owner • Sharjah</div>
                             </div>
                         </div>
-                        <div class="google-logo">G</div>
                     </div>
-                    <div class="review-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                    </div>
-                    <p class="review-text">""</p>
                 </div>
                 
                 <!-- Review 4 -->
@@ -581,84 +995,88 @@
     </section>
 
     <!-- Contact/Booking Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Book Your Appointment</h2>
-                <p>Ready to transform your vehicle? Book a free consultation with our experts. We'll provide a detailed quote and timeline for your project.</p>
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Book Your Appointment</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Ready to transform your vehicle? Book a free consultation with our experts. We'll provide a detailed quote and timeline for your project.</p>
             </div>
             
-            <div class="contact-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Info -->
-                <div class="contact-info-section">
-                    <div class="contact-card">
-                        <h3>Contact Information</h3>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <div class="contact-icon">📞</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Phone</div>
-                                    <div class="contact-value">+971 55 257 9847</div>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl text-primary-500">📞</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Phone</div>
+                                    <div class="text-gray-600">+971 55 257 9847</div>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">✉️</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Email</div>
-                                    <div class="contact-value">beescorporationae@gmail.com</div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl text-primary-500">✉️</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Email</div>
+                                    <div class="text-gray-600">beescorporationae@gmail.com</div>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">📍</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Location</div>
-                                    <div class="contact-value">Warehouse 31 - Al Quoz Industrial Area 3 - Dubai<br>Dubai – United Arab Emirates</div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl text-primary-500">📍</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Location</div>
+                                    <div class="text-gray-600">Warehouse 31 - Al Quoz Industrial Area 3 - Dubai<br>Dubai – United Arab Emirates</div>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">⏰</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Business Hours</div>
-                                    <div class="contact-value">Sat - Thu: 8:00 AM - 8:00 PM<br>Friday: 2:00 PM - 8:00 PM</div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl text-primary-500">⏰</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Business Hours</div>
+                                    <div class="text-gray-600">Sat - Thu: 8:00 AM - 8:00 PM<br>Friday: 2:00 PM - 8:00 PM</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="quick-response-card">
-                        <h4>⚡ Quick Response Guarantee</h4>
-                        <ul>
-                            <li>• Response within 30 minutes</li>
-                            <li>• Free consultation and quote</li>
-                            <li>• Mobile service available</li>
-                            <li>• Same-day service option</li>
+                    <div class="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-6">
+                        <h4 class="text-xl font-bold mb-4">⚡ Quick Response Guarantee</h4>
+                        <ul class="space-y-2">
+                            <li class="text-yellow-100">• Response within 30 minutes</li>
+                            <li class="text-yellow-100">• Free consultation and quote</li>
+                            <li class="text-yellow-100">• Mobile service available</li>
+                            <li class="text-yellow-100">• Same-day service option</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Contact Form -->
-                <div class="contact-form-section">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name *</label>
-                                <input type="text" name="name" required placeholder="Your full name">
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                                <input type="text" name="name" required placeholder="Your full name" 
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                             </div>
-                            <div class="form-group">
-                                <label>Phone Number *</label>
-                                <input type="tel" name="phone" required placeholder="+971 50 XXX XXXX">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" name="phone" required placeholder="+971 50 XXX XXXX"
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" name="email" placeholder="your@email.com">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <input type="email" name="email" placeholder="your@email.com"
+                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Service Required *</label>
-                                <select name="service" required>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Service Required *</label>
+                                <select name="service" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                                     <option value="">Select a service</option>
                                     <option value="Car Wrapping">Car Wrapping</option>
                                     <option value="Peelable Paint">Peelable Paint</option>
@@ -669,9 +1087,10 @@
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Location *</label>
-                                <select name="location" required>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Location *</label>
+                                <select name="location" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                                     <option value="">Select location</option>
                                     <option value="Dubai">Dubai</option>
                                     <option value="Abu Dhabi">Abu Dhabi</option>
@@ -682,25 +1101,29 @@
                             </div>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Vehicle Type</label>
-                                <input type="text" name="vehicle" placeholder="e.g., BMW X5, Tesla Model 3">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Vehicle Type</label>
+                                <input type="text" name="vehicle" placeholder="e.g., BMW X5, Tesla Model 3"
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                             </div>
-                            <div class="form-group">
-                                <label>Vehicle Year</label>
-                                <input type="text" name="year" placeholder="e.g., 2023">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Vehicle Year</label>
+                                <input type="text" name="year" placeholder="e.g., 2023"
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                             </div>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Preferred Date</label>
-                                <input type="date" name="date">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Date</label>
+                                <input type="date" name="date"
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                             </div>
-                            <div class="form-group">
-                                <label>Preferred Time</label>
-                                <select name="time">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Time</label>
+                                <select name="time"
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors">
                                     <option value="">Select time slot</option>
                                     <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM</option>
                                     <option value="12:00 PM - 3:00 PM">12:00 PM - 3:00 PM</option>
@@ -710,14 +1133,17 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label>Additional Message</label>
-                            <textarea name="message" rows="4" placeholder="Tell us about your specific requirements, color preferences, or any questions you have..."></textarea>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Additional Message</label>
+                            <textarea name="message" rows="4" placeholder="Tell us about your specific requirements, color preferences, or any questions you have..."
+                                      class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors resize-none"></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn-full">Book Free Consultation</button>
+                        <button type="submit" class="w-full bg-primary-500 text-white py-4 rounded-lg hover:bg-primary-600 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Book Free Consultation
+                        </button>
                         
-                        <p class="form-disclaimer">By submitting this form, you agree to our terms and conditions. We'll contact you within 30 minutes.</p>
+                        <p class="text-sm text-gray-500 text-center">By submitting this form, you agree to our terms and conditions. We'll contact you within 30 minutes.</p>
                     </form>
                 </div>
             </div>
@@ -725,70 +1151,70 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <!-- Company Info -->
-                <div class="footer-section">
-                    <h3 class="footer-logo">BNZ <span class="logo-accent">Customize</span></h3>
-                    <p class="footer-description">Premium vehicle protection and customization specialists in Dubai, UAE. Expert installation of PPF, ceramic coating, and car wrapping services.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link instagram">📷</a>
-                        <a href="#" class="social-link youtube">📺</a>
-                        <a href="#" class="social-link whatsapp">💬</a>
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4">BNZ <span class="text-primary-500">Customize</span></h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">Premium vehicle protection and customization specialists in Dubai, UAE. Expert installation of PPF, ceramic coating, and car wrapping services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">📷</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">📺</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">💬</a>
                     </div>
                 </div>
                 
                 <!-- Office -->
-                <div class="footer-section">
-                    <h4>Office</h4>
-                    <div class="footer-contact">
-                        <div class="footer-contact-item">
-                            <span class="icon">📍</span>
-                            <div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Office</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-primary-500 mt-1">📍</span>
+                            <div class="text-gray-300">
                                 <p>Warehouse 31 - Al Quoz Industrial Area 3</p>
                                 <p>Dubai – United Arab Emirates</p>
                             </div>
                         </div>
-                        <div class="footer-contact-item">
-                            <span class="icon">✉️</span>
-                            <a href="mailto:beescorporationae@gmail.com">beescorporationae@gmail.com</a>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-500">✉️</span>
+                            <a href="mailto:beescorporationae@gmail.com" class="text-gray-300 hover:text-primary-500 transition-colors">beescorporationae@gmail.com</a>
                         </div>
-                        <div class="footer-contact-item">
-                            <span class="icon">📞</span>
-                            <a href="tel:+971552579847">+971 55 257 9847</a>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-500">📞</span>
+                            <a href="tel:+971552579847" class="text-gray-300 hover:text-primary-500 transition-colors">+971 55 257 9847</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Services 1 -->
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#car-wrapping">Car Wrapping</a></li>
-                        <li><a href="#ppf">Paint Protection Film</a></li>
-                        <li><a href="#ceramic-coating">Ceramic Coating</a></li>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#car-wrapping" class="text-gray-300 hover:text-primary-500 transition-colors">Car Wrapping</a></li>
+                        <li><a href="#ppf" class="text-gray-300 hover:text-primary-500 transition-colors">Paint Protection Film</a></li>
+                        <li><a href="#ceramic-coating" class="text-gray-300 hover:text-primary-500 transition-colors">Ceramic Coating</a></li>
                     </ul>
                 </div>
                 
                 <!-- Services 2 -->
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#window-tinting">Window Tinting</a></li>
-                        <li><a href="#peelable-paint">Peelable Paint</a></li>
-                        <li><a href="#detailing">Full Detailing Service</a></li>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">More Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#window-tinting" class="text-gray-300 hover:text-primary-500 transition-colors">Window Tinting</a></li>
+                        <li><a href="#peelable-paint" class="text-gray-300 hover:text-primary-500 transition-colors">Peelable Paint</a></li>
+                        <li><a href="#detailing" class="text-gray-300 hover:text-primary-500 transition-colors">Full Detailing Service</a></li>
                     </ul>
                 </div>
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2024 BNZ Car Customize. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" class="footer-social-link">📷</a>
-                    <a href="#" class="footer-social-link">📺</a>
-                    <a href="#" class="footer-social-link">💬</a>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2024 BNZ Car Customize. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-primary-500 transition-colors">📷</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-primary-500 transition-colors">📺</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-primary-500 transition-colors">💬</a>
                 </div>
             </div>
         </div>
